@@ -1,5 +1,5 @@
 #!/bin/bash
-yum install java-1.8.0-openjdk.x86_64 wget -y   
+sudo yum install java-1.8.0-openjdk.x86_64 wget -y   
 mkdir -p /opt/nexus/   
 mkdir -p /tmp/nexus/                           
 cd /tmp/nexus/
@@ -10,7 +10,7 @@ EXTOUT=`tar xzvf nexus.tar.gz`
 NEXUSDIR=`echo $EXTOUT | cut -d '/' -f1`
 sleep 5
 rm -rf /tmp/nexus/nexus.tar.gz
-cp -r /tmp/nexus/* /opt/nexus/
+\cp -r /tmp/nexus/* /opt/nexus/
 sleep 5
 useradd nexus
 chown -R nexus.nexus /opt/nexus 
